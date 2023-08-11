@@ -46,6 +46,26 @@ This way, when a new signal specification is given, a new module can be created 
 
 Another approach could be to use a data-driven design, where the behavior of the system is determined by data rather than hard-coded logic. This can make it easier to add new signals, as the behavior of the system can be changed by updating the data rather than modifying the code.
 For example, we could define a set of actions that can be performed by the Algo class, and then use a configuration file or database to specify which actions should be performed for each signal. When a new signal is received, the system would look up the corresponding actions in the data and execute them.
+### Configuration in a file
+
+Pros
+- Simple and easy to implement
+- Easy to test
+Cons:
+- Need to redeploy the application when a new signal is added
+- Configuration is not consistent across all instances
+- Configuration is not versioned
+- Configuration is not auditable
+### Configuration in a database
+
+Pros
+- Configuration is consistent across all instances
+- No redeployment required when a new signal is added
+- Configuration is versioned
+- Configuration is auditable
+Cons:
+- More complex to implement
+- More costly to maintain
 
 I have chosen to use a data-driven design for this project because it is a simple and flexible approach that can be easily extended to handle new signals.
 
