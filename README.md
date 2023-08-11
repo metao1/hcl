@@ -52,11 +52,13 @@ For example, we could define a set of actions that can be performed by the Algo 
 Pros
 - Simple and easy to implement
 - Easy to test
-Cons:
+
+Cons
 - Need to redeploy the application when a new signal is added
 - Configuration is not consistent across all instances
 - Configuration is not versioned
 - Configuration is not auditable
+
 ### Configuration in a database
 
 Pros
@@ -64,7 +66,8 @@ Pros
 - No redeployment required when a new signal is added
 - Configuration is versioned
 - Configuration is auditable
-Cons:
+
+Cons
 - More complex to implement
 - More costly to maintain
 
