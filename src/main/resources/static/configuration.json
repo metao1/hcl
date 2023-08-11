@@ -1,0 +1,17 @@
+{
+  "1": [
+    "setUp",
+    "setAlgoParam(1, 60)",
+    "performCalc",
+    "submitToMarket"
+  ],
+  "2": [
+    "reverse",
+    "setAlgoParam(1, 80)",
+    "submitToMarket"
+  ],
+  "3": [
+    "setAlgoParam(1, 60)",
+    "submitToMarket"
+  ]
+}
