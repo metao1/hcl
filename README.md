@@ -103,6 +103,8 @@ Each instance will have its own configuration file but the content should be sim
 It is important to roll update the instances one by one to avoid any downtime at the sametime
 guarantee the consistency in data behavior.
 
+In future when using database, we need to add configuration with care.
+As the database is shared in this case. Although it gives us flexibility to update the configuration without restarting the app, it is important to make sure that the configuration is consistent across all instances.
 
 
 ## Testing
