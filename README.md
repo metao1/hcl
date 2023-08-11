@@ -98,9 +98,10 @@ This is a service class that serves as the entry point for the trading system. I
 
 The class has two instance variables: `signalConfigService` and `algo`. `signalConfigService` is an instance of `SignalConfig` that is used to retrieve the signal actions from the configuration file. `algo` is an instance of `Algo` that represents the trading algorithm to be executed.
 
-The `handleSignal(int signal)` method takes an integer signal as a parameter and throws `UnknownSignalException` and `ConfigurationException` if the signal is not configured or found. The method retrieves the signal actions from the configuration file using `signalConfigService.getSignalActions()`, checks if the signal is known, and executes the actions related to that signal using the `executeAction(String action)` method. The method also always executes two default actions: `algo.cancelTrades()` and `algo.doAlgo()`.
+The `handleSignal(int signal)` method takes an integer signal as a parameter, checks if the signal is known, and executes the actions related to that signal using the `executeAction(String action)` method. The method also always executes two default actions: `algo.cancelTrades()` and `algo.doAlgo()`.
 
-The `executeAction(String action)` method takes a string action as a parameter and throws `UnknownSignalException`, `ConfigurationException`, `ArrayIndexOutOfBoundsException`, and `NumberFormatException` if the action is not configured or found, or if it has missing or invalid parameters. The method parses each action and executes it using either the `Algo.setAlgoParam(int param, int value)` method for the special case of the "setAlgoParam" action, or by converting the action string into an `Action` object using `Action.fromString(action)` and calling its associated command on the `algo` object.
+The `executeAction(String action)` method takes a string action as a parameterm if the action is not configured or found, or if it has missing or invalid parameters it throws relevant exception. 
+The method parses each action and executes it using either the `Algo.setAlgoParam(int param, int value)` method for the special case of the "setAlgoParam" action, or by converting the action string into an `Action` object using `Action.fromString(action)` and calling its associated command on the `algo` object.
 
 ## Algorithm Complexity
 The complexity of the algorithm is O(n) where n is the number of actions to be executed. The algorithm iterates over the list of actions and executes each action using the `executeAction(Action action)` method in runtime.
