@@ -6,6 +6,7 @@ This project is a trading application that executes a trading algorithm when giv
 - [Requirements](#requirements)
 - [Task](#task)
 - [Run the Application](#run-the-application)
+- [Architecture decisions](#architecture-decisions)
 - [Classes](#classes)
     - [Exceptions](#exceptions)
     - [Action](#action)
