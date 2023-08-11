@@ -96,6 +96,13 @@ If any new method is introduced in the `Algo` library, we need to add this actio
 ```java
 NEW_ACTION("newAction", Algo::newAction)
 ```
+### Project scaling 
+We can run multiple cloned instance of the project.
+We can use a load balancer to distribute the load between the instances.
+Each instance will have its own configuration file but the content should be similar to expect the same behavior of the app.
+It is important to roll update the instances one by one to avoid any downtime at the sametime
+guarantee the consistency in data behavior.
+
 
 
 ## Testing
