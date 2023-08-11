@@ -37,6 +37,22 @@ The code should be a running service with a single HTTP endpoint for receiving s
    ``` 
    curl -X POST http://localhost:8080/api/signal?signal=1 
    ```
+## Architecture decisions
+It sounds like the team is expecting a high volume of new signals to be added to the TradingApplication code once it is in production. 
+With up to 50 new signals being added per month, it’s important to have a scalable and maintainable system in place to handle this growth.
+
+One approach could be to use a modular design, where each signal is implemented as a separate module. 
+This way, when a new signal specification is given, a new module can be created and added to the system without affecting the existing code. This also makes it easier to test each signal individually.
+
+Another approach could be to use a data-driven design, where the behavior of the system is determined by data rather than hard-coded logic. This can make it easier to add new signals, as the behavior of the system can be changed by updating the data rather than modifying the code.
+For example, we could define a set of actions that can be performed by the Algo class, and then use a configuration file or database to specify which actions should be performed for each signal. When a new signal is received, the system would look up the corresponding actions in the data and execute them.
+
+I have chosen to use a data-driven design for this project because it is a simple and flexible approach that can be easily extended to handle new signals.
+
+For sake of simplicity we only use configuration file here, but we can easily extend it to use a database instead in the future.
+
+For code implementation, I have chosen to use Spring Boot to build the application because it is a popular framework that is easy to use and has a lot of community support. It also provides a lot of features out of the box such as dependency injection, configuration, and logging. 
+
 
 ## Classes
 ### Exceptions
